@@ -1,0 +1,87 @@
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(/static/imgs/hinh-nen-may-tinh-fantasy-4k-blogchiasekienthuc.com-3-scaled.jpg) top center / cover no-repeat;
+}
+
+.main {
+    width: 500px;
+}
+
+.form__result {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid #f9f9f9
+}
+
+.container__result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.container__result i {
+    margin: 20px 0 10px 0;
+    font-size: 80px;
+}
+
+.container__result .result--success {
+    color: #66b72c;
+}
+
+.container__result .result--false {
+    color: red;
+}
+
+.text__result {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.text__result--success {
+    color: #66b72c;
+}
+
+.text__result--false {
+    color: red;
+}
+
+.text__container {
+    font-size: 18px;
+    margin-bottom: 70px;
+    color: #fff;
+}
+
+.btn__return {
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 15px;
+    border-radius: 5px;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+
+.btn__return--success {
+    background: #66b72c;
+}
+
+.btn__return--false {
+    background: red;
+}
+
+.btn__return:hover, .btn__return:focus, .btn__return:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+

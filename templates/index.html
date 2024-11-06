@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="shortcut icon" href="https://symbols.vn/wp-content/uploads/2021/11/Mau-bieu-tuong-ngoi-nha-Png.jpg" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/reset.css') }}">
+        <link rel="shortcut icon" href="../static/imgs/Diabetes.webp" type="image/x-icon">
+        <title>Dự đoán bệnh tiểu đường - Machine Learning</title>
+    </head>
+    <body>
+        <div class="main">
+            <h2 class="text__form">Dự đoán bệnh tiểu đường</h2>
+            <form id="form" class="form_predict" action="/predict" method="post" autocomplete="off">        
+                <div class="form-field">
+                    <input name="pregnancies" type="number" class="form-input" placeholder=" " required>
+                    <label for="name" class="form-label">Pregnancies</label>
+                </div>
+                <div class="form-field">
+                    <input name="glucose" type="number" class="form-input" placeholder=" " required>
+                    <label for="name" class="form-label">Glucose</label>
+                </div>
+                <div class="form-field">
+                    <input name="bloodpressure" type="number" class="form-input" placeholder=" " required>
+                    <label for="name" class="form-label">BloodPressure</label>
+                </div>
+                <div class="form-field">
+                    <input name="skinthickness" type="number" class="form-input" placeholder=" " required>
+                    <label for="name" class="form-label">Skin Thickness</label>
+                </div>
+                <div class="form-field">
+                    <input name="insulin" type="number" class="form-input" placeholder=" " required>
+                    <label for="name" class="form-label">Insulin</label>
+                </div>
+                <div class="form-field">
+                    <input name="bmi" step="0.001" type="number" class="form-input" placeholder=" " required>
+                    <label for="name" class="form-label">BMI</label>
+                </div>
+                <div class="form-field">
+                    <input name="dpf" step="0.001" type="number" class="form-input" placeholder=" " required>
+                    <label for="name" class="form-label">Diabetes Pedigree Function</label>
+                </div>
+                <div class="form-select">
+                    <div class="form-field">
+                        <input id="age" name="age" type="number" class="form-input" placeholder=" " required>
+                        <label for="name" class="form-label">Age</label>
+                    </div>
+
+                    <div class="input-container">
+                        <select class="model-input" name="model" id="model-input">
+                            <option value="None">None</option>
+                            <option value="Logistic Regression">Logistic Regression</option>
+                            <option value="KNN">KNN</option>
+                            <option value="Random Forest">Random Forest</option>
+                            <option value="Decision Tree">Decision Tree</option>
+                            <option value="SVM">SVM</option>
+                            <option value="Gaussian Naive Bayes">Gaussian Naive Bayes</option>
+                        </select>
+                        <div class="icon-model">
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>  
+    
+                <input class="submit" type="submit" value="Dự đoán">
+            </form>
+        </div>
+    </body>
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event) {
+        const selectInput = document.getElementById('model-input').value;
+        
+        if (selectInput == "None") {
+            alert('Hãy chọn mô hình để có thể dự đoán');
+            event.preventDefault();
+        }
+        });
+
+        document.getElementById('form').addEventListener('submit', function(event) {
+        const ageInput = document.getElementById('age').value;
+        
+        if (ageInput < 21) {
+            alert('Tuổi phải lớn hơn hoặc bằng 21');
+            event.preventDefault();
+        }
+        });
+    </script>
+</html>

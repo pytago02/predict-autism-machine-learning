@@ -1,0 +1,40 @@
+Pima Indians Diabetes là được cung cấp bởi Viện tiểu đường gồm 769 samples,
+bệnh tiêu hóa và thận quốc gia, mục tiêu là dựa vào các số đo để chuẩn đoán xem bệnh nhân có mắc bệnh hay không, 
+tất cả các bệnh nhân ở đây đều là nữ là >=21 tuổi người Pima - Ấn độ
+
+- pregnant: Số lần mang thai
+- glucose: Chỉ số đường huyết ( mg/dl)
+- pressure: Huyết áp tâm trương (mm/Hg)
+- SkinThickness: Độ dày nếp gấp da (mm)
+- insulin: Huyết thanh (U/ml)
+- BMI: Chỉ số cơ thể (Được tính bằng cân nặng/(chiều cao)^2)
+- DiabetesPedigreeFunction: Chức năng phả hệ bệnh tiểu đường : Là một chức năng cho thấy khả năng mắc bệnh tiểu đường dựa trên tiền sử gia đình.
+- age: Tuổi
+
+- (Output) diabetes: 1 : Mắc bệnh, 0: Không mắc bệnh
+
+### Các thuật toán sử dụng trong mô hình
+
+### Quy trình xây dựng mô hình học máy 
+1. Thu thập và tiền xử lý dữ liệu:
+- Thu thập dữ liệu phù hợp với bài toán cần giải quyết 
+- Làm sạch, tiền xử lý và chuyển đổi dữ liệu nếu cần thiết
+2. Chia dữ liệu:
+- Chia dữ liệu thành 2 tập: Tập train và tập test
+3. Chọn và huấn luyện mô hình:
+- Chọn mô hình phù hợp với bài toán
+- Huấn luyện mô hình trên tập huấn luyện để tìm ra các tham số 
+tối ưu cho mô hình
+4. Kiểm tra mô hình:
+- Sử dụng mô hình đã huấn luyện để dự đoán trên tập kiểm tra
+- So sánh dự đoán với kết quả thực tế để đánh giá hiệu suất
+5. Đánh giá mô hình:
+- Đánh giá hiệu quả của mô hình bằng các chỉ Số
+    + MAE
+    + MSE
+    + R^2
+    + Accuracy
+    + F1-score tùy thuộc vào loại bài toán
+6. Triển khai mô hình:
+- Triển khai mô hình vào môi trường thực tế để thực hiện các dự
+đoán hoặc phân loại trên dự liệu mới
